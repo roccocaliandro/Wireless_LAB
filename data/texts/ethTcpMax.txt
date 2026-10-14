@@ -1,0 +1,29 @@
+Connecting to host 192.168.1.8, port 5201
+[  5] local 192.168.1.4 port 45386 connected to 192.168.1.8 port 5201
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.00   sec   114 MBytes   954 Mbits/sec    0    576 KBytes       
+[  5]   1.00-2.00   sec   112 MBytes   943 Mbits/sec    0    602 KBytes       
+[  5]   2.00-3.00   sec   113 MBytes   949 Mbits/sec    0    602 KBytes       
+[  5]   3.00-4.00   sec   112 MBytes   942 Mbits/sec    0    602 KBytes       
+[  5]   4.00-5.00   sec   112 MBytes   943 Mbits/sec    0    708 KBytes       
+[  5]   5.00-6.00   sec   111 MBytes   935 Mbits/sec    0    781 KBytes       
+[  5]   6.00-7.00   sec   113 MBytes   945 Mbits/sec    0    781 KBytes       
+[  5]   7.00-8.00   sec   112 MBytes   942 Mbits/sec    0    863 KBytes       
+[  5]   8.00-9.00   sec   112 MBytes   943 Mbits/sec    0    863 KBytes       
+[  5]   9.00-10.00  sec   112 MBytes   937 Mbits/sec    0    863 KBytes       
+[  5]  10.00-11.00  sec   113 MBytes   949 Mbits/sec    0    906 KBytes       
+[  5]  11.00-12.00  sec   112 MBytes   936 Mbits/sec    0    906 KBytes       
+[  5]  12.00-13.00  sec   112 MBytes   940 Mbits/sec    0    906 KBytes       
+[  5]  13.00-14.00  sec   112 MBytes   940 Mbits/sec    0    906 KBytes       
+[  5]  14.00-15.00  sec   112 MBytes   940 Mbits/sec    0    906 KBytes       
+[  5]  15.00-16.00  sec   113 MBytes   948 Mbits/sec    0    906 KBytes       
+[  5]  16.00-17.00  sec   112 MBytes   936 Mbits/sec    0    906 KBytes       
+[  5]  17.00-18.00  sec   112 MBytes   941 Mbits/sec    0    906 KBytes       
+[  5]  18.00-19.00  sec   113 MBytes   947 Mbits/sec    0    906 KBytes       
+[  5]  19.00-20.00  sec   112 MBytes   939 Mbits/sec    0    906 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-20.00  sec  2.19 GBytes   943 Mbits/sec    0             sender
+[  5]   0.00-20.01  sec  2.19 GBytes   941 Mbits/sec                  receiver
+
+iperf Done.

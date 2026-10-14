@@ -1,0 +1,59 @@
+Eth eth
+UDP
+sudo tcpdump -i enp2s0 -w ethUdpMax.pcap
+
+iperf3 -c 192.168.1.8 -u -b 2G -l 1472 -t 20 > ethUdpMax.txt
+
+sudo tcpdump -i enp2s0 -w ethUdpMaxR.pcap
+
+iperf3 -c 192.168.1.8 -u -b 2G -l 1472 -t 20 -R > ethUdpMaxR.txt
+
+TCP
+
+sudo tcpdump -i enp2s0 -w ethTcpMax.pcap
+
+iperf3 -c 192.168.1.8 -b 2G -l 1460 -t 20 > ethTcpMax.txt
+
+sudo tcpdump -i enp2s0 -w ethTcpMaxR.pcap
+
+iperf3 -c 192.168.1.8 -b 2G -l 1460 -t 20 -R > ethTcpMaxR.txt
+
+Wifi eth
+UDP
+sudo tcpdump -i wlp0s20f3 -w mixUdpMax.pcap
+
+iperf3 -c 192.168.1.8 -u -b 2G -l 1472 -t 20 > mixUdpMax.txt
+
+sudo tcpdump -i wlp0s20f3 -w mixUdpMaxR.pcap
+
+iperf3 -c 192.168.1.8 -u -b 2G -l 1472 -t 20 -R > mixUdpMaxR.txt
+
+TCP
+
+sudo tcpdump -i wlp0s20f3 -w mixTcpMax.pcap
+
+iperf3 -c 192.168.1.8 -b 2G -l 1460 -t 20 > mixTcpMax.txt
+
+sudo tcpdump -i wlp0s20f3 -w mixTcpMaxR.pcap
+
+iperf3 -c 192.168.1.8 -b 2G -l 1460 -t 20 -R > mixTcpMaxR.txt
+
+Wifi Wifi
+UDP
+sudo tcpdump -i wlp0s20f3 -w wifiUdpMax.pcap
+
+iperf3 -c 192.168.1.10 -u -b 2G -l 1472 -t 20 > wifiUdpMax.txt
+
+sudo tcpdump -i wlp0s20f3 -w wifiUdpMaxR.pcap
+
+iperf3 -c 192.168.1.10 -u -b 2G -l 1472 -t 20 -R > wifiUdpMaxR.txt
+
+TCP
+
+sudo tcpdump -i wlp0s20f3 -w wifiTcpMax.pcap
+
+iperf3 -c 192.168.1.10 -b 2G -l 1460 -t 20 > wifiTcpMax.txt
+
+sudo tcpdump -i wlp0s20f3 -w wifiTcpMaxR.pcap
+
+iperf3 -c 192.168.1.10 -b 2G -l 1460 -t 20 -R > wifiTcpMaxR.txt

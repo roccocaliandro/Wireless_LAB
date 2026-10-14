@@ -1,0 +1,49 @@
+\section{Lab Setup and Scenarios}
+
+The testbed consists of two laptops: an \textbf{Acer Aspire A14} and a \textbf{Lenovo} laptop, connected through a \textbf{Vodafone home AP}. Ethernet connections are established via Cat~5 cables; the Acer uses a USB-A to Ethernet adapter.
+
+\textbf{Ethernet Configuration:}
+\begin{itemize}
+    \item Link capacity: ..Mb/s..
+    \item Duplex-mode: ..full/half..
+\end{itemize}
+
+\textbf{Wi-Fi Configuration:}
+\begin{itemize}
+    \item Protocol: ..
+    \item Channel: ..
+    \item Number of active stations: ..
+    \item Nominal max rate: ..
+    \item Current data rate: ..
+    \item Security protocol: ..
+\end{itemize}
+
+\textbf{Network configuration:}
+\begin{itemize}
+    \item IP address ..
+    \item Subnet: 192.168.1.0/24
+    \item Gateway: 192.168.1.1 (Vodafone AP)
+    \item DNS: ..
+\end{itemize}
+
+\textbf{Software:}
+Both PCs are running Linux (Ubuntu) and \textit{iperf3} as client and server alternately
+
+We consider the following three scenarios:
+
+\textbf{Scenario 1 – Ethernet to Ethernet:} Both hosts connected via Ethernet (Cat~5) to the AP. This represents the baseline wired configuration.
+
+\textbf{Scenario 2 – WiFi to WiFi:} Both hosts connected wirelessly to the AP. This scenario highlights the overhead introduced by the 802.11 MAC layer.
+
+\textbf{Scenario 3 – WiFi to Ethernet:} One host connected via WiFi, the other via Ethernet. This mixed scenario is representative of typical home network usage.
+
+For each scenario, goodput is measured as a function of the frame size $L \in (0, 1500]$~bytes, using both TCP and UDP. Each experiment is repeated multiple times to obtain statistically significant results. Results are compared against theoretical predictions.
+\subsection{UDP configuration and fragmentation}
+Because of the datagram-oriented nature of UDP, the payload size chosen in \texttt{iperf3}, using the \texttt{-l} flag, represents the size of each datagram passed to the IP layer. 
+However, when a UDP datagram (payload $+$ 8\,B UDP header $+$ 20\,B IP header) exceeds the link MTU (typically 1500\,B for Ethernet), the IP layer must \textbf{fragment} the packet into multiple IP packets. To summarize, this process introduces some risks such as increased loss probability, (if a single fragment is lost the entire datagram is dropped) and reduced efficiency due to extra IP headers.
+Finally, to \textbf{avoid fragmentation} in our UDP experiments, we set the payload size to $L = 1472$\,B, so that the total IP packet is exactly $1472 + 8 + 20 = 1500$\,B, matching the Ethernet MTU. The command used for each UDP test was:
+\begin{center}
+\texttt{iperf3 -c <server> -u -b 2G -l 1472 -t 20}
+\end{center}
+with the addition of the \texttt{-R} flag for reverse-direction tests (server sends to client). The target bitrate \texttt{-b~2G} was chosen to saturate the link and expose the natural throughput ceiling of each scenario. 
+Each test lasted 20 seconds to collect meaningful measurements. Packet captures were collected in parallel using \texttt{tcpdump} for Wireshark analysis.

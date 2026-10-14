@@ -1,0 +1,30 @@
+Connecting to host 192.168.1.8, port 5201
+Reverse mode, remote host 192.168.1.8 is sending
+[  5] local 192.168.1.9 port 51231 connected to 192.168.1.8 port 5201
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-1.00   sec  25.3 MBytes   212 Mbits/sec  0.009 ms  55668/73673 (76%)  
+[  5]   1.00-2.00   sec  22.8 MBytes   191 Mbits/sec  0.057 ms  67139/83400 (81%)  
+[  5]   2.00-3.00   sec  25.3 MBytes   212 Mbits/sec  0.090 ms  62892/80889 (78%)  
+[  5]   3.00-4.00   sec  23.4 MBytes   196 Mbits/sec  0.017 ms  62305/78972 (79%)  
+[  5]   4.00-5.00   sec  25.5 MBytes   214 Mbits/sec  0.040 ms  63229/81405 (78%)  
+[  5]   5.00-6.00   sec  22.6 MBytes   189 Mbits/sec  0.054 ms  63586/79661 (80%)  
+[  5]   6.00-7.00   sec  23.3 MBytes   196 Mbits/sec  0.041 ms  68117/84747 (80%)  
+[  5]   7.00-8.00   sec  38.2 MBytes   320 Mbits/sec  0.025 ms  51338/78524 (65%)  
+[  5]   8.00-9.00   sec  25.0 MBytes   210 Mbits/sec  0.018 ms  63813/81638 (78%)  
+[  5]   9.00-10.00  sec  16.2 MBytes   136 Mbits/sec  0.019 ms  43569/55104 (79%)  
+[  5]  10.00-11.00  sec  13.8 MBytes   116 Mbits/sec  0.028 ms  82664/92482 (89%)  
+[  5]  11.00-12.00  sec  6.44 MBytes  54.1 Mbits/sec  0.244 ms  51489/56079 (92%)  
+[  5]  12.00-13.00  sec  14.1 MBytes   118 Mbits/sec  0.010 ms  112065/122120 (92%)  
+[  5]  13.00-14.00  sec  36.6 MBytes   307 Mbits/sec  0.050 ms  52226/78328 (67%)  
+[  5]  14.00-15.00  sec  39.6 MBytes   332 Mbits/sec  0.102 ms  52268/80487 (65%)  
+[  5]  15.00-16.00  sec  32.8 MBytes   275 Mbits/sec  0.047 ms  57284/80668 (71%)  
+[  5]  16.00-17.00  sec  24.1 MBytes   202 Mbits/sec  0.059 ms  62963/80157 (79%)  
+[  5]  17.00-18.00  sec  24.3 MBytes   204 Mbits/sec  0.180 ms  63075/80364 (78%)  
+[  5]  18.00-19.00  sec  23.2 MBytes   195 Mbits/sec  0.130 ms  61564/78107 (79%)  
+[  5]  19.00-20.00  sec  32.4 MBytes   272 Mbits/sec  0.027 ms  60813/83919 (72%)  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-20.01  sec  2.22 GBytes   952 Mbits/sec  0.000 ms  0/1617960 (0%)  sender
+[  5]   0.00-20.00  sec   495 MBytes   208 Mbits/sec  0.027 ms  1258067/1610724 (78%)  receiver
+
+iperf Done.

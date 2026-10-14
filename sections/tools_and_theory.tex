@@ -1,0 +1,24 @@
+\section{Tools and theory}
+
+The tool used to measure network goodput is \textbf{iperf3}. It works in client-server mode: the server (\texttt{iperf3 -s}) passively receives traffic, while the client (\texttt{iperf3 -c <host>}) generates and sends it over to the host (server).
+It supports both TCP and UDP, and allows control over frame size (\texttt{-l}), duration (\texttt{-t}), and bitrate (\texttt{-b}).
+\textbf{Wireshark} is instead the tool used to validate traffic and analyse TCP stream graphs and I/O graphs.
+
+The \textbf{goodput} is defined as the amount of useful application-layer data received per unit of time, and differs from throughput, which includes all protocol overhead, retransmissions, and signalling traffic.
+
+\subsection{Transport Protocols: TCP and UDP}
+TCP (Transmission Control Protocol) is a \textbf{reliable}, \textbf{stateful} transport protocol. Before any data transfer, TCP performs a three-way handshake to establish a session between the two endpoints. It then maintains per-session state (sequence numbers, receive window, congestion window) to provide guaranteed delivery, flow control, and congestion control. Application data is transparently segmented into MSS-sized chunks.
+
+UDP (User Datagram Protocol), on the other hand, is a \textbf{stateless} transport protocol that operates on the principle of independent \textit{datagrams}. No handshake takes place and no session state is maintained: each application message is handed to the IP layer as a \textbf{single, self-contained datagram}. There is no flow control, no congestion control, and no retransmission mechanism, meaning data is delivered on a strictly \textit{best-effort} basis.
+
+For a UDP segment over Ethernet, the maximum efficiency is:
+\begin{equation}
+\mu_{UDP} = \frac{L}{L + H_{UDP} + H_{IP} + H_{ETH}}
+\end{equation}
+where $L$ is the payload size, $H_{UDP} = 8$~B, $H_{IP} = 20$~B, $H_{ETH} = 38$~B (14B header + 4B FCS + 20B inter-frame gap + preamble). For TCP, an additional header of $H_{TCP} = 20$~B must be considered, plus ACK segments travelling in the reverse direction:
+\begin{equation}
+\mu_{TCP} = \frac{L}{L + H_{TCP} + H_{IP} + H_{ETH} + \frac{H_{ACK}}{n}}
+\end{equation}
+where $H_{ACK}$ is the size of a TCP ACK segment and $n$ is the number of data segments per ACK (typically 2 with delayed ACK).
+
+Over \textbf{IEEE 802.11}, additional overhead is introduced by the CSMA/CA MAC protocol, including DIFS/SIFS interframe spaces, RTS/CTS frames (when enabled), and ACK frames at the MAC layer. This reduces the effective goodput compared to Ethernet, especially for small frame sizes.
